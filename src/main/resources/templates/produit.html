@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Produits</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<nav>
+    <a href="produits.html">Liste des Produits</a>
+    <a href="add-produit.html">Ajouter nouveau produit </a>
+    <a href="categories.html.html">Liste des Categories de vêtement</a>
+    <a href="add-categorie.html.html">Ajouter une nouvelle categorie de vêtement </a>
+</nav>
+<table>
+    <thead>
+    <tr>
+        <th>Nom</th>
+        <th>Libelle</th>
+        <th>Prix</th>
+        <th>QteStock</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${produits.empty}">
+        <td colspan="2"> No Tutorials available</td>
+    </tr>
+    <tr th:each="prods:${produits}">
+        <td><span th:text="${prods.nom}"></span> </td>
+        <td><span th:text="${prods.libelle}"></span></td>
+        <td><span th:text="${prods.prix}"></span></td>
+        <td><span th:text="${prods.qteStock}"></span></td>
+    </tr>
+
+
+    </tbody>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Categories</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<nav>
+    <a href="produits.html">Liste des Produits</a>
+    <a href="add-produit.html">Ajouter nouveau produit </a>
+    <a href="categories.html.html">Liste des Categories de vêtement</a>
+    <a href="add-categorie.html.html">Ajouter une nouvelle categorie de vêtement </a>
+</nav>
+<table>
+    <thead>
+    <tr>
+        <th>NomCategorie</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${categories.empty}">
+        <td colspan="2"> No Categories available</td>
+    </tr>
+    <tr th:each="categ:${categories}">
+        <td><span th:text="${categ.nomCategorie}"></span> </td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
